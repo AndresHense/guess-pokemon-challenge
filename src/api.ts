@@ -1,4 +1,3 @@
-import {Pokemon} from "./types";
 
 export const POKEMON = [
   "bulbasaur",
