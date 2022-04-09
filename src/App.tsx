@@ -26,7 +26,7 @@ const App = () => {
 
   const handleGuess = () => {
     setGuessed(true);
-    if (name === pokemon.name) {
+    if (name.toLowerCase() === pokemon.name) {
       setWon(true);
       setVictorias(victorias + 1);
     } else {
