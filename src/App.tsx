@@ -53,14 +53,30 @@ const App = () => {
     <>
       {start && (
         <Center>
-          <Stack w='40%' marginTop='4rem'>
-            <Text as='h1' fontSize='3xl' align='center'>
+          <Stack
+            w={{ base: '90%', md: '70%', lg: '60%', xl: '40%' }}
+            marginTop={{ base: '2rem', md: '3rem', lg: '4rem' }}
+          >
+            <Text
+              as='h1'
+              fontSize={{ base: 'lg', md: 'xl', xl: '2xl' }}
+              align='center'
+            >
               Quién es este Pokemon?
             </Text>
-            <Stack direction='row' alignItems='center' justify='space-between'>
+            <Stack
+              direction={{ base: 'column', md: 'row', lg: 'row' }}
+              alignItems='center'
+              justify='space-between'
+            >
               <Image
                 src={pokemon.image}
-                boxSize='450px'
+                boxSize={{
+                  base: '300px',
+                  md: '300px',
+                  lg: '400px',
+                  xl: '450px',
+                }}
                 objectFit='cover'
                 filter={brightness}
               />
@@ -68,7 +84,10 @@ const App = () => {
             </Stack>
             <Stack>
               <Center>
-                <Stack direction='row' w='80%'>
+                <Stack
+                  direction='row'
+                  w={{ base: '100%', md: '90%', lg: '80%' }}
+                >
                   <InputGroup>
                     <Input
                       value={name}
@@ -77,7 +96,11 @@ const App = () => {
                       }}
                       isDisabled={guessed}
                     />
-                    <Button isDisabled={guessed} onClick={handleGuess}>
+                    <Button
+                      isDisabled={guessed}
+                      onClick={handleGuess}
+                      fontSize={{ base: 'xs', md: 'md', lg: 'lg' }}
+                    >
                       Adivinar
                     </Button>
                   </InputGroup>
@@ -86,7 +109,11 @@ const App = () => {
 
               {guessed && (
                 <Stack>
-                  <Text align='center' fontSize='2xl' my='2rem'>
+                  <Text
+                    align='center'
+                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+                    my='2rem'
+                  >
                     {won ? 'Acertaste!!' : 'Pokemon equivocao'}
                   </Text>
                   <Button onClick={handleRestart}>Volver a Intentar</Button>
@@ -104,13 +131,18 @@ const App = () => {
         <Stack minH='100vh' justifyContent='center' alignItems='center'>
           <Text
             as='h1'
-            fontSize='4xl'
+            fontSize={{ base: 'lg', md: '2xl', lg: '4xl' }}
+            align='center'
             fontWeight='bold'
             fontFamily='Press Start 2P'
           >
             Quién es ese Pokemon?
           </Text>
-          <Button colorScheme='green' size='lg' onClick={handleStart}>
+          <Button
+            colorScheme='green'
+            fontSize={{ base: 'md', md: 'lg', xl: 'lg' }}
+            onClick={handleStart}
+          >
             Juguemos
           </Button>
         </Stack>
